@@ -12,6 +12,8 @@ html {
   inline-size: 1200px;
   block-size: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -57,7 +59,6 @@ ol {
   gap: 28px;
   min-inline-size: 1144px;
   min-block-size: 542px;
-  margin: auto;
 }
 
 /* Контейнер с видосом и формами */
@@ -76,12 +77,13 @@ ol {
 .result__video-container {
   position: relative;
   inline-size: 100%;
-  min-block-size: 386px;
+  block-size: 386px;
 }
 
 .result__video {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
 }
 
 /* Общие для search-form */
@@ -123,6 +125,8 @@ ol {
 /* Поле ввода */
 
 .search-form__textfield {
+  appearance: none;
+  cursor: text;
   background-color: transparent;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
@@ -137,7 +141,7 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  color: #ffffff70;
+  color: #ffffffB3;
   font-family: inherit;
   font-size: inherit;
 }
@@ -164,7 +168,10 @@ ol {
 /* Чекбоксы */
 
 .search-form__pseudo-checkbox {
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 19px;
   block-size: 19px;
   border: 1px solid #fff;
@@ -172,8 +179,7 @@ ol {
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
-  display: flex;
-  margin: 1px;
+  display: block;
   inline-size: 15px;
   block-size: 15px;
   background-color: #fff;
@@ -188,6 +194,7 @@ ol {
   font-family: inherit;
   font-size: inherit;
   font-weight: 700;
+  block-size: 34px;
 }
 
 .button:hover {
@@ -196,7 +203,7 @@ ol {
 }
 
 .button:active {
-  background-color: #ffffff40;
+  background-color: #545050;
 }
 
 .button:focus {
@@ -212,7 +219,6 @@ ol {
 
 .search-form__submit-button {
   inline-size: 194px;
-  block-size: 34px;
   align-self: self-end;
 }
 
@@ -263,6 +269,7 @@ ol {
 /* Карточка города (Вложенность: Ссылка->Карточка->Описательный контейнер&&Картинка) */
 
 .content__card-link:link {
+  display: block;
   color: #fff;
   text-decoration: none;
 }
@@ -276,12 +283,21 @@ ol {
   text-decoration: underline;
 }
 
+.content__card-link:active {
+  background-color: #545050;
+}
+
 .content__card-link:focus {
   outline: none;
 }
 
 .content__card-link:focus-visible {
-  outline: none;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__card-link_current{
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -289,19 +305,6 @@ ol {
   min-block-size: 103px;
   display: flex;
   padding: 2px;
-}
-
-.content__card-link:active > .content__video-card {
-  background-color: #ffffff40;
-}
-
-.content__card-link:focus > .content__video-card {
-  outline: none;
-}
-
-.content__card-link:focus-visible > .content__video-card {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
 }
 
 .content__video-card-description-container {
@@ -333,5 +336,4 @@ ol {
 
 .more-button {
   inline-size: 100%;
-  block-size: 34px;
 }
